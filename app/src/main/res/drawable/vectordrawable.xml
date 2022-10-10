@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="300"
+    android:viewportHeight="300">
+    <group
+        android:name="jumpGroup"
+        android:pivotX="0"
+        android:pivotY="0"
+        android:rotation="0"
+        >
+
+        <path
+            android:fillColor="#ff0000"
+            android:pathData="M22,32
+        A10,10 0 1,1 42,32
+        A10,10 0 1,1 22,32 Z" />
+
+
+    </group>
+</vector>

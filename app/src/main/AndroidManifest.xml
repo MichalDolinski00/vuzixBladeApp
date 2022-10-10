@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="edu.ib.testapplicationvuzix1">
+
+
+    <!--        android:roundIcon="@mipmap/ic_launcher_round"-->
+    <application
+
+        android:name=".BladeInitialApplication"
+
+        android:allowBackup="true"
+        android:icon="@drawable/baseline_info_24"
+        android:label="@string/app_name"
+
+        android:supportsRtl="true"
+
+        android:theme="@style/HudTheme"
+        >
+
+
+
+        <activity android:name=".AuditoryActivity"/>
+
+        <activity android:name=".VisualActivity"/>
+
+
+        <meta-data
+        android:name="com.vuzix.icon.tint" android:value="true" />
+        <activity android:name=".MainMenuActivity"
+        android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        <!-- Vuzix Icon Tint -->
+        <!-- If you are going to utilize Vuzix Launcher Tint ensure your icon does have a
+        Transparent layer and that some pixel cannot be tint over or modified. If not the icon
+        will not look as expected-->
+            <meta-data
+            android:name="com.vuzix.icon.tint" android:value="true" />
+
+        </activity>
+    </application>
+
+</manifest>
