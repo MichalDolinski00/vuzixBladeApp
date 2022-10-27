@@ -1,20 +1,43 @@
 package edu.ib.testapplicationvuzix1;
 
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothManager;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.vuzix.hud.actionmenu.ActionMenuActivity;
 
 public class MainMenuActivity extends ActionMenuActivity {
+
+    private TextView tv;
+
+    BluetoothManager bluetoothManager;
+    BluetoothAdapter bluetoothAdapter;
+//    BluetoothManager bluetoothManager = getSystemService(BluetoothManager.class);
+
+//    private Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
 
     // creates activity from given layout
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu_activity);
+        tv = findViewById(R.id.textView);
+        tv.setText("hello");
+
+        //bluetooth and fun :P
+        bluetoothManager = (BluetoothManager) getSystemService(BLUETOOTH_SERVICE);
+        bluetoothAdapter = bluetoothManager.getAdapter();
+        if (bluetoothAdapter == null) {
+            Log.e("bt error","bluetooth not found :((");
+            tv.setText("very bad");
+        } else {
+            tv.setText("very good"); // works
+        }
     }
 
     // adds menu to activity from given layout

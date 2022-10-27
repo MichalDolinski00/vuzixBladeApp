@@ -4,10 +4,10 @@ plugins {
 
 android {
     compileSdk 33
-
     defaultConfig {
+        vectorDrawables.useSupportLibrary = true
         applicationId "edu.ib.testapplicationvuzix1"
-        minSdk 21
+        minSdk 22
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -31,4 +31,5 @@ dependencies {
     implementation 'com.vuzix:hud-actionmenu:1.1'
     implementation 'com.vuzix:hud-resources:1.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.vectordrawable:vectordrawable-animated:1.1.0'
 }

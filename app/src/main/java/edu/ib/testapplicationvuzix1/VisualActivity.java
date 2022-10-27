@@ -1,8 +1,8 @@
 package edu.ib.testapplicationvuzix1;
 
-import android.graphics.drawable.AnimatedVectorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.vuzix.hud.actionmenu.ActionMenuActivity;
@@ -10,24 +10,18 @@ import com.vuzix.hud.actionmenu.ActionMenuActivity;
 public class VisualActivity extends ActionMenuActivity {
 
     private ImageView image;
-    private AnimatedVectorDrawable animation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // TODO: change layout below to different, specifically for auditory activity
-        setContentView(R.layout.visual);
-        image = (ImageView) findViewById(R.id.animation);
+        setContentView(R.layout.visual_new);
+        image = findViewById(R.id.imageview);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Drawable d = image.getDrawable();
-        if (d instanceof AnimatedVectorDrawable) {
-            animation = (AnimatedVectorDrawable) d;
-            animation.start();
-        }
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.blinking);
+        image.startAnimation(animation);
     }
 }
